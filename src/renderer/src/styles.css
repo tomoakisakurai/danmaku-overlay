@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* オーバーレイ用: コメントが画面右端から左端へ流れるアニメーション。
+   translateX(100vw) で要素の左端を画面右端に置き、translateX(-100%) で
+   要素の右端が画面左端を抜けるまで動かす。距離は「画面幅 + 文字幅」になる。 */
+@keyframes danmaku-flow {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* どんな背景の上でも読めるよう、白フチ風の影を重ねる。 */
+.danmaku-comment {
+  animation-name: danmaku-flow;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.9),
+    0 0 2px rgba(0, 0, 0, 0.9),
+    0 1px 4px rgba(0, 0, 0, 0.8);
+}

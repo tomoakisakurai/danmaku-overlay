@@ -1,0 +1,30 @@
+appId: jp.co.asoview.danmaku-overlay
+productName: コメント弾幕
+directories:
+  output: release
+  buildResources: build
+# 既定の include(**/*)＋本番依存の node_modules に対して、不要物を除外する。
+# Supabase の認証情報は out/ にビルド時埋め込み済みなので .env 自体は同梱しない。
+files:
+  - "!**/.vscode/*"
+  - "!src/*"
+  - "!electron.vite.config.{js,ts,mjs,cjs}"
+  - "!{.gitignore,.prettierignore,README.md}"
+  - "!{.env,.env.*,.npmrc}"
+  - "!{tsconfig.json,tsconfig.node.json,tsconfig.web.json,.yarnrc.yml,electron-builder.yml}"
+  - "!release/*"
+asar: true
+npmRebuild: false
+# 配布物をできるだけ小さくする。
+compression: maximum
+# Chromium の言語リソース(.pak)を日本語・英語だけに絞る（他言語ぶんを削減）。
+electronLanguages:
+  - ja
+  - en-US
+artifactName: ${name}-${version}-${arch}.${ext}
+mac:
+  # 社内配布は zip が確実（受け取り側は解凍 → Applications へドラッグ）。
+  # dmg が必要なら下に `- dmg` を足す（実機ターミナルでは生成可能）。
+  target:
+    - zip
+  category: public.app-category.productivity

@@ -1,0 +1,18 @@
+node_modules
+out
+dist
+release
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Yarn (node-modules linker)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
