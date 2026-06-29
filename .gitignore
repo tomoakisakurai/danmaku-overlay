@@ -8,6 +8,9 @@ release
 .env.*
 !.env.example
 
+# Supabase CLI の一時ファイル（リンク先プロジェクト情報など）
+supabase/.temp
+
 # Yarn (node-modules linker)
 .yarn/*
 !.yarn/patches
