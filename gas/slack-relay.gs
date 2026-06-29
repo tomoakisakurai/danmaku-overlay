@@ -8,7 +8,7 @@
  * 【スクリプトプロパティに設定する値】
  *   SUPABASE_URL      : https://xxxx.supabase.co
  *   SUPABASE_ANON_KEY : eyJ...（anon キー）
- *   SUPABASE_ROOM     : asoview（弾幕アプリと同じルーム名）
+ *   SUPABASE_ROOM     : general（弾幕アプリと同じルーム名）
  *   SLACK_TOKEN       : 任意の共有トークン（?token= で照合。Slack 署名検証の代替）
  */
 
@@ -83,7 +83,7 @@ function doPost(e) {
 
   var supabaseUrl = props.getProperty(PROP_SUPABASE_URL)
   var supabaseKey = props.getProperty(PROP_SUPABASE_ANON_KEY)
-  var room = props.getProperty(PROP_SUPABASE_ROOM) || 'asoview'
+  var room = props.getProperty(PROP_SUPABASE_ROOM) || 'general'
 
   broadcastToSupabase(supabaseUrl, supabaseKey, room, comment)
 
@@ -142,7 +142,7 @@ function testBroadcast() {
   var props = PropertiesService.getScriptProperties()
   var supabaseUrl = props.getProperty(PROP_SUPABASE_URL)
   var supabaseKey = props.getProperty(PROP_SUPABASE_ANON_KEY)
-  var room = props.getProperty(PROP_SUPABASE_ROOM) || 'asoview'
+  var room = props.getProperty(PROP_SUPABASE_ROOM) || 'general'
 
   var comment = {
     id: Utilities.getUuid(),

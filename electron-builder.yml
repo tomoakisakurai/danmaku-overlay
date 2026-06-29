@@ -1,4 +1,4 @@
-appId: jp.co.asoview.danmaku-overlay
+appId: com.danmaku-overlay.app
 productName: コメント弾幕
 directories:
   output: release

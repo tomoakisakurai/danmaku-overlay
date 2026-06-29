@@ -4,7 +4,7 @@ import type { ConnectionState, ConnectionStatus } from '@shared/types'
 
 const ROOM_STORAGE_KEY = 'danmaku-room'
 const ROOM_HISTORY_STORAGE_KEY = 'danmaku-room-history'
-const DEFAULT_ROOM = 'asoview'
+const DEFAULT_ROOM = 'general'
 const ROOM_HISTORY_LIMIT = 5
 
 const STATUS_LABEL: Record<ConnectionStatus, string> = {

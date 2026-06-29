@@ -4,7 +4,7 @@
   "description": "ニコニコ動画風に画面上へコメントを流す透明オーバーレイ（コメントスクリーン型）デスクトップアプリ",
   "main": "./out/main/index.js",
   "license": "MIT",
-  "author": "asoview",
+  "author": "",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",

@@ -65,7 +65,7 @@ Deno.serve(async (req) => {
 })
 
 // チャンネル ID → ルーム名を解決する。
-// 優先順位: CHANNEL_ROOM_MAP → URL パラメータ → SUPABASE_ROOM 環境変数 → 'asoview'
+// 優先順位: CHANNEL_ROOM_MAP → URL パラメータ → SUPABASE_ROOM 環境変数 → 'general'
 function resolveRoom(channelId: string, url: URL): string {
   const mapRaw = Deno.env.get('CHANNEL_ROOM_MAP') || ''
   if (channelId && mapRaw) {
@@ -74,7 +74,7 @@ function resolveRoom(channelId: string, url: URL): string {
       if (id === channelId && room) return room
     }
   }
-  return url.searchParams.get('room') || Deno.env.get('SUPABASE_ROOM') || 'asoview'
+  return url.searchParams.get('room') || Deno.env.get('SUPABASE_ROOM') || 'general'
 }
 
 type CommentPayload = { text: string; imageKey?: string }

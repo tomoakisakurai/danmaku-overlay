@@ -28,7 +28,7 @@ GAS Web App（slack-relay.gs）
 |---|---|
 | `SUPABASE_URL` | `https://xxxx.supabase.co`（弾幕アプリの `.env` と同じ） |
 | `SUPABASE_ANON_KEY` | `eyJ...`（弾幕アプリの `.env` と同じ） |
-| `SUPABASE_ROOM` | `asoview`（弾幕アプリで接続するルーム名） |
+| `SUPABASE_ROOM` | `general`（弾幕アプリで接続するルーム名） |
 | `SLACK_TOKEN` | 任意の文字列（例: `mysecret123`）なりすまし防止用 |
 
 ---
@@ -87,7 +87,7 @@ GAS Web App（slack-relay.gs）
 
 ## 5. 動作確認
 
-1. 弾幕アプリを起動し、`asoview` ルームに接続
+1. 弾幕アプリを起動し、`general` ルームに接続
 2. Slack チャンネルに投稿
 3. 水色のコメントが画面に流れれば成功 🎉
 
